@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ice Cream</title>
+    <script src = "https://code.jquery.com/jquery-3.3.1.js"></script>
+    <style>
+      body {
+        background-color: #b5fcde;
+      }
+      #cup {
+        height: 150px;
+        width: 200px;
+        position: absolute;
+        left: 350px;
+        top: 190px;
+        border: solid black;
+        background-image: linear-gradient(to bottom right, blue, red);
+      }
+      
+      #mixerS {
+        width: 190px;
+        height: 100px;
+        position: absolute;
+        left: 355px;
+        top: 90px;
+        border-top-left-radius: 110px; 
+        border-top-right-radius: 110px;
+        border-bottom: 0px;
+      }
+      
+      p {
+        text-align: center;
+        font-family: cursive;
+        font-size: 40px;
+      }
+      
+      #cherry {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        left: 420px;
+        top: 50px;
+        border: 2px solid red;
+        border-radius: 110px;
+        background-color: #e22626;
+      }
+      
+      #pocky {
+        width: 15px;
+        height: 149px;
+        position: absolute;
+        left: 350px;
+        top: 40px;
+        border: 2px solid black;
+        border-top-left-radius: 110px; 
+        border-top-right-radius: 110px;
+        background-color: #7a4009;
+      }
+    </style>
+    <script>
+        $(function() {
+
+            $('button').click(function() {
+               var name = $('#name').val();
+               var mixer = $('#mixer').val();
+               var topping = $('#topping').val(); 
+              
+               $('#menu').fadeOut(1000);
+               $('p').html(name);
+              
+              if (mixer == 'strawberry'){
+                $('#mixerS').css('background-color', 'pink');
+              }
+              else if (mixer == 'chocalate'){
+                $('#mixerS').css('background-color', '#7a4009');
+              }
+              else {
+                $('#mixerS').css('background-color', 'white');
+              }
+              
+              if (topping == 'pocky') {
+                $('#cherry').fadeOut(1);
+              }
+              else if(topping == 'cherry') {
+                $('#pocky').fadeOut(1);
+              }
+               
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <dv id = "menu">
+         <h1>IC * ICE CREAM: MENU</h1>
+    Name: <input id ="name"><br><br>
+    Mixer: <select id ="mixer">
+                <option value ="vanilla">vanilla </option>
+                <option value ="chocalate">chocalate</option>
+                <option value ="strawberry">strawberry</option>
+            </select> <br><br> 
+    Topping: <select id="topping">
+                <option value ="pocky">pocky</option>
+                <option value ="cherry">cherry</option>
+            </select> <br><br>
+        <button>Create Ice Cream</button>
+    </dv>
+    
+    <dv id= "iceCream">
+      <span id = "pocky"></span>
+      <span id = "cherry"></span>
+      <span id = "mixerS"></span>
+      <span id = "cup">
+        <p></p>
+      </span>
+    </dv>
+    
+</body>
+</html>
+
