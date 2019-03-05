@@ -7,7 +7,8 @@
     <script src = "https://code.jquery.com/jquery-3.3.1.js"></script>
     <style>
       body {
-        background-color: #b5fcde;
+        background-color: black;
+        color: white;
       }
       #cup {
         height: 150px;
@@ -61,14 +62,16 @@
     </style>
     <script>
         $(function() {
+            $('#iceCream').hide();
 
             $('button').click(function() {
                var name = $('#name').val();
                var mixer = $('#mixer').val();
                var topping = $('#topping').val(); 
               
-               $('#menu').fadeOut(1000);
+               $('#menu').fadeOut(1);
                $('p').html(name);
+               $('#iceCream').show();
               
               if (mixer == 'strawberry'){
                 $('#mixerS').css('background-color', 'pink');
